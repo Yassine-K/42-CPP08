@@ -6,7 +6,7 @@
 /*   By: ykhayri <ykhayri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/12 13:13:00 by ykhayri           #+#    #+#             */
-/*   Updated: 2024/08/14 11:04:49 by ykhayri          ###   ########.fr       */
+/*   Updated: 2024/08/14 15:32:02 by ykhayri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int main()
 {
 	try{
 		int a[40]={-2, -1, -6, -5, -5};
-		Span sp = Span(40);
+		Span sp = Span(5);
 		sp.fillSpan(a, 9);
 		sp.addNumber(3);
 		sp.addNumber(17);

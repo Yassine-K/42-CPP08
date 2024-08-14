@@ -6,7 +6,7 @@
 /*   By: ykhayri <ykhayri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/12 13:16:23 by ykhayri           #+#    #+#             */
-/*   Updated: 2024/08/14 11:04:57 by ykhayri          ###   ########.fr       */
+/*   Updated: 2024/08/14 15:29:08 by ykhayri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ Span::Span(const Span & cp) {
 
 Span & Span::operator = (const Span & cp) {
 	if (this != &cp) {
+		delete nums;
 		nums = new std::deque<int>();
 		lim = cp.lim;
 		for (std::deque<int>::iterator i = cp.nums->begin(); i != cp.nums->end(); ++i) {
