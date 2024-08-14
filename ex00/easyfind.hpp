@@ -6,7 +6,7 @@
 /*   By: ykhayri <ykhayri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/12 10:11:40 by ykhayri           #+#    #+#             */
-/*   Updated: 2024/08/12 13:11:35 by ykhayri          ###   ########.fr       */
+/*   Updated: 2024/08/14 09:47:04 by ykhayri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@
 #include <deque>
 
 template <typename T> int easyfind(T a, int b) {
-	int ind = 0;
-	for (typename T::iterator i = a.begin(); i != a.end(); i++, ind++)
-		if (*i == b)
-			return ind;
-	return -3;
+	typename T::iterator it;
+	it = std::find(a.begin(), a.end(), b);
+	if(it != a.end())
+		return std::distance(a.begin(), it);
+	return -1;
 }

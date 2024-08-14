@@ -2,16 +2,14 @@ NAME = easyfind
 
 SRC = main.cpp
 
-INC = easyfind.hpp
-
 OBJ = ${SRC:.cpp=.o}
 
 WWW = -Wall -Wextra -Werror
 
 SUP = -std=c++98
 
-%.o: %.cpp
-	@c++ ${WWW} -I${INC} -c $< -o $@
+%.o: %.cpp *.hpp
+	@c++ ${WWW} -c $< -o $@
 
 all: ${NAME}
 
