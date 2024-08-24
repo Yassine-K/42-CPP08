@@ -6,7 +6,7 @@
 /*   By: ykhayri <ykhayri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/12 13:16:23 by ykhayri           #+#    #+#             */
-/*   Updated: 2024/08/14 15:29:08 by ykhayri          ###   ########.fr       */
+/*   Updated: 2024/08/24 09:30:19 by ykhayri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,11 +67,8 @@ int Span::shortestSpan() const{
 }
 
 int Span::longestSpan() const {
-	static int res = -1;
 	if (std::distance(nums->begin(), nums->end()) < 2)
 		throw(std::invalid_argument("Not enough data!"));
 	std::sort(nums->begin(), nums->end());
-	for (std::deque<int>::iterator it = nums->begin(); it != nums->end(); ++it)	
-		res = std::max(res, it + 1 != nums->end() ? std::abs(*it - *(it + 1)) : res);
-	return res;
+	return *(nums->end() - 1) - *nums->begin();
 }
